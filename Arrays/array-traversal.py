@@ -14,4 +14,4 @@ def access_element(array, index):
 
 traversal(['1', '2', '3'])
 
-access_element(['1', '2', '3'], 1)
+access_element(['1', '2', '3'], -1)
