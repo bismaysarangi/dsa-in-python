@@ -70,3 +70,52 @@ def first_second(my_list):
     # TODO
     my_list.sort()
     return my_list[-1], my_list[-2]
+
+
+# Duplicate Number
+# Write a function to remove the duplicate numbers on given integer array/list.
+
+def remove_duplicates(arr):
+    # TODO
+    return list(set(arr))
+
+
+# Pairs
+# Write a function to find all pairs of an integer array whose sum is equal to a given number. Do not consider commutative pairs.
+
+# Example
+
+# pair_sum([2, 4, 3, 5, 6, -2, 4, 7, 8, 9],7)
+# Output : ['2+5', '4+3', '3+4', '-2+9']
+
+
+# Note:
+
+# 4+3 comes from second and third elements from the main list.
+
+# 3+4 comes from third and seventh elements from the main list.
+
+def pair_sum(arr, sum):
+    result = []
+    for i in range(len(arr)):
+        for j in range(i+1, len(arr)):
+            if arr[i] + arr[j] == sum:
+                result.append(f"{arr[i]}+{arr[j]}")
+    return result
+
+
+# Contains Duplicate
+# Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+
+# Example :
+
+# Input: nums = [1,2,3,1]
+# Output: true
+
+def contains_duplicate(nums):
+    seen = set()
+    for num in nums:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False
