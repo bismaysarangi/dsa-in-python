@@ -119,3 +119,15 @@ def contains_duplicate(nums):
             return True
         seen.add(num)
     return False
+
+# Permutations
+
+def permutations(list1, list2):
+    if len(list1) != list2:
+        return False
+    list1.sort()
+    list2.sort()
+
+    if list1 == list2:
+        return True
+    return False
