@@ -79,6 +79,14 @@ def remove_duplicates(arr):
     # TODO
     return list(set(arr))
 
+def removeDuplicates(arr):
+    seen = set()
+
+    for i in arr:
+        if i not in seen:
+            seen.add(i)
+    return list(seen)
+
 
 # Pairs
 # Write a function to find all pairs of an integer array whose sum is equal to a given number. Do not consider commutative pairs.
