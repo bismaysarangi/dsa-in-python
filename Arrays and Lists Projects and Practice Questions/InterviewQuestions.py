@@ -187,3 +187,14 @@ def rotate(matrix):
     # Reverse each row
     for row in matrix:  # Iterate over each row in the matrix
         row.reverse()  # Reverse the elements in the current row
+
+#Rotate by 90 deg
+
+def rotate(matrix): 
+    #code here
+    for i in range(len(matrix)):
+        matrix[i].reverse()
+    
+    for i in range(len(matrix)):
+        for j in range(i, len(matrix)):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
