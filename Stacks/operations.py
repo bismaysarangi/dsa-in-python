@@ -12,6 +12,14 @@ class Stack:
             return True
         return False
     
+    def push(self, value):
+        self.list.append(value)
+        return list
     
 customStack = Stack()
-print(customStack.isEmpty())
+# print(customStack.isEmpty())
+customStack.push(1)
+customStack.push(3)
+customStack.push(27)
+customStack.push(13)
+print(customStack)
