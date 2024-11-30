@@ -17,3 +17,11 @@ print(trans)
 trans['four'] = 'chaar'
 print(trans)
 
+# Updation
+myDict = {'name': 'Jack', 'age': 26}
+myDict['age'] = 21
+print(myDict)
+
+# Addition
+myDict['address'] = 'Downtown'
+print(myDict)

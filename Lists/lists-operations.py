@@ -42,3 +42,4 @@ b = [1, 4, 6]
 
 print(a + b)
 print(a * 2)
+ 
