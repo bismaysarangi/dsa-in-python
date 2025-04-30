@@ -69,3 +69,31 @@ def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         for i in nums:
             final_arr.append(hash_map[i])
         return final_arr
+
+# Problem: Minimum time Visiting all points
+def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
+        # Time Complexity: O(n)
+        # Space Complexity: O(1)
+        res = 0
+        for i in range(1, len(points)):
+            x1, y1 = points[i - 1]
+            x2, y2 = points[i]
+
+            res += max(abs(x1 - x2), abs(y1 - y2))
+
+        return res
+
+# Problem: Find Numbers with Even Number of Digits
+def findNumbers(self, nums: List[int]) -> int:
+        # Time Complexity: O(n)
+        # Space Complexity: O(1)
+        count_dig = 0
+        count = 0
+        for i in nums:
+            s_i = str(i)
+            count_dig = len(s_i)
+
+            if count_dig % 2 == 0:
+                count += 1
+
+        return count
