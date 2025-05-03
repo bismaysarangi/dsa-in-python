@@ -97,3 +97,36 @@ def findNumbers(self, nums: List[int]) -> int:
                 count += 1
 
         return count
+
+# Problem: Spiral Matrix
+def spiralOrder(self, matrix: list[list[int]]) -> list[int]:
+        res = []
+        while matrix:
+            res += matrix.pop(0)
+            if matrix and matrix[0]:
+                  for row in matrix:
+                        res.append(row.pop())
+            if matrix:
+                  res += matrix.pop()[::-1]
+            if matrix and matrix[0]:
+                  for row in matrix[::-1]:
+                        res.append(row.pop(0))
+        return res
+
+#Problem: Square of a Sorted Array
+def sortedSquares(self, nums: List[int]) -> List[int]:
+        # Time Complexity: O(n)
+        # Space Complexity: O(n)
+        return sorted([i ** 2 for i in nums])
+# Problem: Three Sum
+def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = set()
+        nums.sort()
+        n = len(nums)
+        for i in range(n-2):
+            for j in range(i + 1, n - 1):
+                for k in range(j + 1, n):
+                    temp=nums[i] + nums[j] + nums[k]
+                    if temp == 0:
+                        res.add((nums[i],nums[j],nums[k]))
+        return list(res)
