@@ -126,7 +126,7 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
         for i in range(n-2):
             for j in range(i + 1, n - 1):
                 for k in range(j + 1, n):
-                    temp=nums[i] + nums[j] + nums[k]
+                    temp = nums[i] + nums[j] + nums[k]
                     if temp == 0:
                         res.add((nums[i],nums[j],nums[k]))
         return list(res)
