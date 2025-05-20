@@ -45,7 +45,13 @@ class LinkedList:
             current = current.next
         return current
             
-    
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
+
     def __str__(self):
         temp_node = self.head
         result = ''
@@ -59,9 +65,5 @@ class LinkedList:
 new_linked_list = LinkedList()
 for i in range(100, 700, 100):
     new_linked_list.append(i)
-# print(new_linked_list.tail.value)  # Output: 600
-# print(new_linked_list.length)      # Output: 6 
-# print(new_linked_list)
-new_linked_list.traverse()  
-print(new_linked_list.search(400))    # Output: 100 -> 200 -> 300 -> 400 -> 500 -> 600
-print(new_linked_list.get(3))
+print(new_linked_list.set_value(3, 1000)) # Output: 1000
+print(new_linked_list)
