@@ -34,6 +34,16 @@ class LinkedList:
             current = current.next
             index += 1
         return False
+    
+    def get(self, index):
+        if index == -1:
+            return self.tail
+        if index < 0 or index >= self.length:
+            return None
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current.value if current else None
             
     
     def __str__(self):
@@ -54,3 +64,4 @@ for i in range(100, 700, 100):
 # print(new_linked_list)
 new_linked_list.traverse()  
 print(new_linked_list.search(400))    # Output: 100 -> 200 -> 300 -> 400 -> 500 -> 600
+print(new_linked_list.get(3))
