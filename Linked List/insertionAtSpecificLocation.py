@@ -27,6 +27,11 @@ class LinkedList:
             self.head = new_node
         self.length += 1              
     def insert(self, value, index):
+        if index < 0 or index > self.length:
+            raise IndexError("Index out of bounds")
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
         new_node = Node(value)
         if index == 0:
             new_node.next = self.head
