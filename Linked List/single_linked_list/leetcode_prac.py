@@ -25,7 +25,7 @@ def isPlaindroome(self, head: optional[Node]) -> bool:
         left = left.next
         right = right.next
     return True 
-
+# list1 = [1, 2, 3] list2 = [1, 3, 5]
 #Merge two sorted lists
 def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
     cur = dummy = ListNode()
@@ -42,3 +42,15 @@ def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) ->
         cur.next = list1 if list1 else list2
     
     return dummy.next
+
+# Check if a linked list has a cycle
+def hasCycle(self, head: Optional[ListNode]) -> bool:
+    slow = fast = head
+
+    while fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow == fast:
+            return True
+    
+    return False
