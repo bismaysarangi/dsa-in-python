@@ -132,3 +132,17 @@ def threeSum(self, nums: List[int]) -> List[List[int]]:
                     if temp == 0:
                         res.add((nums[i],nums[j],nums[k]))
         return list(res)
+# Problem: Best Time to Buy and Sell Stock
+def maxProfit(self, prices: List[int]) -> int:
+        # Time Complexity: O(n)
+        # Space Complexity: O(1)
+        min_price = float('inf')
+        max_profit = 0
+        
+        for price in prices:
+            if price < min_price:
+                min_price = price
+            elif price - min_price > max_profit:
+                max_profit = price - min_price
+                
+        return max_profit
