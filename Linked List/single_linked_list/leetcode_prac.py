@@ -54,3 +54,23 @@ def hasCycle(self, head: Optional[ListNode]) -> bool:
             return True
     
     return False
+# Problem: Middle of Linked List
+def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        slow, fast = head, head
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+            
+        return slow
+
+# Problem: Reverse Linked List
+def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        node = None
+
+        while head:
+            temp = head.next
+            head.next = node
+            node = head
+            head = temp
+        
+        return node
