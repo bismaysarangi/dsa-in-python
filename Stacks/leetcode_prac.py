@@ -49,3 +49,23 @@ def sortStack(stack):
         temp_stack.append(num)
 
     return temp_stack
+
+# Problem: Evaluate Reverse Polish Notation
+def evalRPN(self, tokens: List[str]) -> int:
+        stack = []
+
+        for char in tokens:
+            if char == "+":
+                stack.append(stack.pop() + stack.pop())
+            elif char == "-":
+                second, first = stack.pop(), stack.pop()
+                stack.append(first - second)
+            elif char == "*":
+                stack.append(stack.pop() * stack.pop())
+            elif char == "/":
+                second, first = stack.pop(), stack.pop()
+                stack.append(int(first / second))
+            else:
+                stack.append(int(char))
+        
+        return stack[0]
