@@ -2,10 +2,7 @@
 def containsDuplicate(self, nums: List[int]) -> bool:
         # Time Complexity: O(n) 
         # Space Complexity: O(n)
-        seen = set(nums)
-        if len(seen) == len(nums):
-            return False
-        return True
+        return True if len(nums) != len(set(nums)) else False
 
 # Problem: Missing Number in Array
 def missingNumber(self, nums: List[int]) -> int:
