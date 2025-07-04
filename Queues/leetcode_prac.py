@@ -25,3 +25,22 @@ def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
                 result += min(tickets[i], tickets[k] - 1)
             
         return result
+
+# Problem: Reverse first K elements of Queue
+from collections import deque
+
+class Solution:
+    def reverseFirstK(self, q, k):
+        #code here 
+        stack = []
+        
+        for _ in range(k):
+            stack.append(q.popleft())
+        
+        while stack:
+            q.append(stack.pop())
+        
+        for _ in range(len(q) - k):
+            q.append(q.popleft())
+        
+        return q
