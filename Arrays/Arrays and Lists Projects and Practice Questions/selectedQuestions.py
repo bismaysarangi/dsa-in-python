@@ -143,3 +143,14 @@ def maxProfit(self, prices: List[int]) -> int:
                 max_profit = price - min_price
                 
         return max_profit
+
+# Problem: Median of two sorted arrays
+def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        nums = nums1 + nums2
+        nums.sort()
+        n = len(nums)
+
+        if n % 2 != 0:
+            return float(nums[n // 2]) 
+        else:
+            return (nums[n // 2 - 1] + nums[n // 2]) / 2
