@@ -44,13 +44,15 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
 
 # Problem: How many numbers are smaller than the current number, Approach: My Own
 def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        # Time Complexity: O(n^2)
+        # Time Complexity: O(n log n)
         # Space Complexity: O(n)
         sorted_nums = sorted(nums)
-        smaller_arr = []
+        arr = []
+
         for i in nums:
-            smaller_arr.append(sorted_nums.index(i))
-        return smaller_arr
+            arr.append(sorted_nums.index(i))
+        
+        return arr
 
 # Problem: How many numbers are smaller than the current number, Approach: Hash Map
 def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
