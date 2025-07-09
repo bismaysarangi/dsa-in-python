@@ -86,15 +86,12 @@ def minTimeToVisitAllPoints(self, points: List[List[int]]) -> int:
 def findNumbers(self, nums: List[int]) -> int:
         # Time Complexity: O(n)
         # Space Complexity: O(1)
-        count_dig = 0
         count = 0
         for i in nums:
-            s_i = str(i)
-            count_dig = len(s_i)
-
-            if count_dig % 2 == 0:
+            str_i = str(i)
+            if len(str_i) % 2 == 0:
                 count += 1
-
+                
         return count
 
 # Problem: Spiral Matrix
