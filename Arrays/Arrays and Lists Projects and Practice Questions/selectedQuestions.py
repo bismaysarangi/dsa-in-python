@@ -143,6 +143,16 @@ def maxProfit(self, prices: List[int]) -> int:
                 
         return max_profit
 
+# Problem: Find Peak Element
+def findPeakElement(self, nums: List[int]) -> int:
+        max_element = float('-inf')
+        for i in range(len(nums)):
+            if nums[i] > max_element:
+                max_element = nums[i]
+                max_index = i
+        
+        return max_index
+
 # Problem: Median of two sorted arrays
 def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         nums = nums1 + nums2
