@@ -153,6 +153,9 @@ def findPeakElement(self, nums: List[int]) -> int:
         
         return max_index
 
+def findPeakElement(self, nums: List[int]) -> int:
+        return nums.index(max(nums))
+
 # Problem: Median of two sorted arrays
 def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         nums = nums1 + nums2
