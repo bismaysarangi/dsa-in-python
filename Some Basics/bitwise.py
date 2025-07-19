@@ -15,3 +15,11 @@ for i in range(32):
     if (10 >> i) & 1:
         res += 1
 print(res)
+
+# Problem: Single Number
+def singleNumber(self, nums: List[int]) -> int:
+        answer = 0
+        for num in nums:
+            answer ^= num
+        
+        return answer
