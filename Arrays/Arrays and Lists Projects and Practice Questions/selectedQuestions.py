@@ -25,6 +25,19 @@ def findClosestNumber(self, nums: List[int]) -> int:
 
         return closest 
 
+# Problem: Merge Strings Alternately
+def mergeAlternately(self, word1: str, word2: str) -> str:
+        n1, n2 = len(word1), len(word2)
+        word = []
+
+        for i in range(max(n1, n2)):
+            if i < n1:
+                word.append(word1[i])
+            if i < n2:
+                word.append(word2[i])
+        
+        return "".join(word)
+
 # Problem: Find all missing numbers
 def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         # Time Complexity: O(n)
