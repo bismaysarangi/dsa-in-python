@@ -51,3 +51,14 @@ def isValid(self, s: str) -> bool:
                 return False  
 
         return vowels >= 1 and consonants >= 1
+
+# Problem: Jewels and Stones
+def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        count = 0
+        jewels = set(jewels)
+
+        for jewel in stones:
+            if jewel in jewels:
+                count += 1
+        
+        return count
