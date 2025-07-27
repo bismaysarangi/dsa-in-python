@@ -97,3 +97,25 @@ def removeElements(self, head: Optional[ListNode], val: int) -> Optional[ListNod
                temp = temp.next
      return head
 
+# Problem: Reverse Linked List II
+def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    if left == right:
+         return head
+    
+    dummy = ListNode(0)
+    dummy.next = head
+
+    prev = dummy
+    for _ in range(left - 1):
+         prev = prev.next
+    
+    current = prev.next
+    next_node = None
+    for i in range(right - left):
+         next_node = current.next
+         current.next = next_node.next
+         next_node.next = prev.next
+         prev.next = next_node
+    
+    return dummy.next
+
