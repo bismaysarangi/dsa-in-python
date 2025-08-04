@@ -223,3 +223,9 @@ def rotate(self, matrix: List[List[int]]) -> None:
      for i in range(n):
           for j in range(i, n):
                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+
+# Problem: Merge two sorted arrays
+def merge(self, nums1: List[int], nums2: List[int]) -> None:
+     nums = nums1 + nums2
+     nums.sort()
+     return nums
