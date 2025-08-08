@@ -1,11 +1,11 @@
-def selectionSort(cList):
-    for i in range(len(cList)):
+def selection_sort(nums):
+    for i in range(len(nums)):
         min_index = i
-        for j in range(i + 1, len(cList)):
-            if cList[min_index] > cList[j]:
+        for j in range(i + 1, len(nums)):
+            if nums[j] < nums[min_index]:
                 min_index = j
-            cList[i], cList[min_index] = cList[min_index], cList[i]
-            
-    return cList
+        nums[i], nums[min_index] = nums[min_index], nums[i]
+    
+    return nums
 
-print(selectionSort([1, 6, 3, 3, 8]))
+print(selection_sort([1, 3, 8, 4, 6]))
