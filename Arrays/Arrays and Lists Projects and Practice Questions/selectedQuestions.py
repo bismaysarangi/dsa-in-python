@@ -245,5 +245,18 @@ def findSecondLargest(self, arr: List[int]) -> int:
     nums.pop(max_index)
         
     new_max = max(nums)
-    
+
     return new_max
+
+# Problem: Check if the array is sorted or not even if it is rotated
+def check(self, nums: List[int]) -> bool:
+        count = 0
+        n = len(nums)
+
+        for i in range(n):
+            if nums[i] > nums[(i + 1) % n]:
+                count += 1
+            if count > 1:
+                return False
+        
+        return True
