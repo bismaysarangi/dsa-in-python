@@ -1,4 +1,7 @@
 # Problem: Contains Duplicate
+from typing import List
+
+
 def containsDuplicate(self, nums: List[int]) -> bool:
         # Time Complexity: O(n) 
         # Space Complexity: O(n)
@@ -229,3 +232,18 @@ def merge(self, nums1: List[int], nums2: List[int]) -> None:
      nums = nums1 + nums2
      nums.sort()
      return nums
+
+# Problem: Finding 2nd largest element in an array without sorting
+def findSecondLargest(self, arr: List[int]) -> int:
+    nums = list(set(arr))
+    if len(nums) <= 1:
+        return -1
+            
+    max_element = max(nums)
+        
+    max_index = nums.index(max_element)
+    nums.pop(max_index)
+        
+    new_max = max(nums)
+    
+    return new_max
