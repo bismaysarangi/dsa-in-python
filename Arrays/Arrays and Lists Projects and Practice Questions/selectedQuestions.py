@@ -260,3 +260,14 @@ def check(self, nums: List[int]) -> bool:
                 return False
         
         return True
+
+# Problem: Remove duplicates from sorted array
+def removeDuplicates(self, nums: List[int]) -> int:
+        s = set(nums)
+        nums.clear()
+
+        for i in s:
+            nums.append(i)
+        
+        nums.sort()
+        return nums
