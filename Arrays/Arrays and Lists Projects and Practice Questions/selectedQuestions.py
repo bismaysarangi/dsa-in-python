@@ -271,3 +271,20 @@ def removeDuplicates(self, nums: List[int]) -> int:
         
         nums.sort()
         return nums
+
+# Problem: Left Rotate Array by one
+def rotateArrayByOne(self, nums):
+        nums[:] = nums[1:] + nums[:1]
+
+# Problem: Rotate Array by k elements
+def rotate(self, nums: List[int], k: int) -> None:
+        for i in range(k):
+            nums.insert(0, nums.pop())
+
+
+# Problem: Move Zeroes
+def moveZeroes(self, nums: List[int]) -> None:
+     for i in nums:
+            if i == 0:
+                nums.remove(i)
+                nums.append(i)
