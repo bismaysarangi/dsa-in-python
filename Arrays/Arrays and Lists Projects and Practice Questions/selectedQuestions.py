@@ -288,3 +288,22 @@ def moveZeroes(self, nums: List[int]) -> None:
             if i == 0:
                 nums.remove(i)
                 nums.append(i)
+
+# Problem: Union of two arrays
+def unionArray(self, nums1, nums2):
+        union = set(nums1) | set(nums2)
+        return list(union)
+
+# Problem: Find Maximum consecutive 1's
+def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        max_one, count = 0, 0
+
+        for num in nums:
+            if num == 1:
+                count += 1
+                max_one = max(max_one, count)
+            else:
+                count = 0
+        
+        return max_one
+
