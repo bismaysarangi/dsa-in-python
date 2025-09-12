@@ -322,3 +322,19 @@ def subarraySum(self, nums: List[int], k: int) -> int:
             freq[prefix_sum] += 1
         
         return count
+
+# Problem: Majority Element
+def majorityElement(self, nums: List[int]) -> int:
+     count = 0
+     candidate = None
+
+     for num in nums:
+          if count == 0:
+               candidate = num
+     if num == candidate:
+            count += 1
+     else:
+            count -= 1
+     
+     return candidate
+    
