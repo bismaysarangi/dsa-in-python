@@ -107,3 +107,18 @@ def rotateString(self, s: str, goal: str) -> bool:
         if goal in 2 * s:
             return True
         return False
+
+# Problem: Isometric Strings
+def isIsomorphic(s: str, t: str) -> bool:
+    mapST, mapTS = {}, {}
+
+    for charS, charT in zip(s, t):
+        if charS in mapST and mapST[charS] != charT:
+            return False
+        if charT in mapTS and mapTS[charT] != charS:
+            return False
+
+        mapST[charS] = charT
+        mapTS[charT] = charS
+
+    return True
