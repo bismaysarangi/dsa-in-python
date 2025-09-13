@@ -69,3 +69,24 @@ def evalRPN(self, tokens: List[str]) -> int:
                 stack.append(int(char))
         
         return stack[0]
+
+# Problem: Remove Outer Parentheses
+def removeOuterParentheses(self, s: str) -> str:
+    stack = []
+    res = ""
+
+    for c in s:
+        if c == "(":
+            if stack:
+                res += c
+                stack.append(c)
+            else:
+                stack.append(c)
+        else:
+            if len(stack) == 1:
+                stack.pop()
+            else:
+                res += c
+                stack.pop()
+    
+    return res
