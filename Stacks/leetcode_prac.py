@@ -136,3 +136,11 @@ def longestCommonPrefix(strs: List[str]) -> str:
                 return strs[0][:i]
     
     return strs[0]
+
+# Problem: Largest Odd Number
+def largestOddNumber(self, num: str) -> str:
+        i = len(num) - 1
+        while i >= 0 and int(num[i]) % 2 == 0:
+            i -= 1
+        
+        return num[: i + 1]
