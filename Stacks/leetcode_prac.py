@@ -90,3 +90,20 @@ def removeOuterParentheses(self, s: str) -> str:
                 stack.pop()
     
     return res
+
+# Problem: Valid Anagram
+from collections import Counter
+def isAnagram(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+    
+    count_s, count_t = Counter(s), Counter(t)
+    return count_s == count_t
+
+# Problem: Rotate String
+def rotateString(self, s: str, goal: str) -> bool:
+        if len(s) != len(goal):
+            return False
+        if goal in 2 * s:
+            return True
+        return False
