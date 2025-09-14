@@ -370,3 +370,16 @@ def rearrangeArray(self, nums: List[int]) -> List[int]:
         
         return alternate
     
+# Problem: Leaders in an Array
+def leaders(self, nums: List[int]) -> List[int]:
+    n = len(nums)
+    leaders = []
+    max_right = nums[-1]
+    leaders.append(max_right)
+
+    for i in range(n - 2, -1, -1):
+        if nums[i] >= max_right:
+            max_right = nums[i]
+            leaders.append(max_right)
+
+    return leaders[::-1]
