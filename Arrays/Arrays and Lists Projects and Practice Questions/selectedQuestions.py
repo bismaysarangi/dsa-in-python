@@ -337,4 +337,18 @@ def majorityElement(self, nums: List[int]) -> int:
             count -= 1
      
      return candidate
+
+# Problem: Maximum Subarray
+def maxSubArray(self, nums: List[int]) -> int:
+     maximum = nums[0]
+     current_sum = 0
+
+     for num in nums:
+          current_sum += num
+          maximum = max(current_sum, maximum)
+
+          if current_sum < 0:
+                current_sum = 0
+    
+     return maximum
     
