@@ -351,4 +351,22 @@ def maxSubArray(self, nums: List[int]) -> int:
                 current_sum = 0
     
      return maximum
+
+# Problem: Rearrange Array Alternately
+def rearrangeArray(self, nums: List[int]) -> List[int]:
+        positive = []
+        negative = []
+        alternate = []
+
+        for num in nums:
+            if num >= 0:
+                positive.append(num)
+            else:
+                negative.append(num)
+
+        for pos, neg in zip(positive, negative):
+            alternate.append(pos)
+            alternate.append(neg)
+        
+        return alternate
     
