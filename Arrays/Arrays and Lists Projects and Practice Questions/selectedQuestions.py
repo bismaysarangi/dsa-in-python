@@ -383,3 +383,12 @@ def leaders(self, nums: List[int]) -> List[int]:
             leaders.append(max_right)
 
     return leaders[::-1]
+
+# Problem: Rotate by 90 degree
+def rotate(self, matrix: List[List[int]]) -> None:
+        n = len(matrix)
+        matrix.reverse()
+
+        for i in range(n):
+            for j in range(i, n):
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
