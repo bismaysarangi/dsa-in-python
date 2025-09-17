@@ -79,10 +79,25 @@ def reverseWords(s: str) -> str:
     words.reverse()
     return " ".join(words)
 
-# Sort Characters by Frequency
+# Problem: Sort Characters by Frequency
 from collections import Counter
 def frequencySort(s: str) -> str:
     count = Counter(s)
     sorted_chars = sorted(count.items(), key=lambda x: -x[1])
 
     return "".join(char * count for char, count in sorted_chars)
+
+# Problem: Maximum Nesting Depth of the Parentheses
+def maxDepth(self, s: str) -> int:
+    count = 0
+    max_depth = 0
+
+    for char in s:
+        if char == '(':
+            count += 1
+            max_depth = max(max_depth, count)
+        if char == ')':
+            count -= 1
+    
+    return max_depth
+            
