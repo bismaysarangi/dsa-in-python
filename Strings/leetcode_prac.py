@@ -78,3 +78,11 @@ def reverseWords(s: str) -> str:
     words = s.split()
     words.reverse()
     return " ".join(words)
+
+# Sort Characters by Frequency
+from collections import Counter
+def frequencySort(s: str) -> str:
+    count = Counter(s)
+    sorted_chars = sorted(count.items(), key=lambda x: -x[1])
+
+    return "".join(char * count for char, count in sorted_chars)
