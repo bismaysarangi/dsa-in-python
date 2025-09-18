@@ -1,5 +1,8 @@
 # Works only for sorted arrays
 
+from typing import List
+
+
 def binarySearch(array, value):
     left, right = 0, len(array) - 1
 
@@ -135,4 +138,35 @@ def minEatingSpeed(self, piles: List[int], h: int) -> int:
                left = mid + 1
                
      return ans
+
+# Problem: Find Lower Bound
+def lowerBound(self, nums: List[int], target: int) -> int:
+     left, right = 0, len(nums) - 1
+     ans = len(nums)
+
+     while left <= right:
+          mid = (left + right) // 2
+          if nums[mid] >= target:
+               ans = mid
+               right = mid - 1
+          else:
+               left = mid + 1
+     
+     return ans
+
+# problem: Find Upper Bound
+def upperBound(self, nums: List[int], target: int) -> int:
+     left, right = 0, len(nums) - 1
+     ans = len(nums)
+
+     while left <= right:
+          mid = (left + right) // 2
+          if nums[mid] > target:
+               ans = mid
+               right = mid - 1
+          else:
+               left = mid + 1
+
+     return ans
+
                     
