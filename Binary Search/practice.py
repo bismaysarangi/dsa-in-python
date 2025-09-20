@@ -169,4 +169,11 @@ def upperBound(self, nums: List[int], target: int) -> int:
 
      return ans
 
+# Problem: Count Occurences in an array
+from collections import Counter
+class Solution:
+    def countOccurrences(self, arr, target):
+        # Your code goes here
+        c = Counter(arr)
+        return c[target]
                     
