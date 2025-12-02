@@ -1,3 +1,5 @@
+from typing import List
+
 # Problem: Subset
 def subsets(self, nums):
     res = []
@@ -16,3 +18,22 @@ def subsets(self, nums):
     
     dfs(0)
     return res
+
+# Problem: Permutations
+def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        ans, sol = [], []
+
+        def backtrack():
+            if len(sol) == n:
+                ans.append(sol.copy())
+                return 
+            
+            for x in nums:
+                if x not in sol:
+                    sol.append(x)
+                    backtrack()
+                    sol.pop()
+
+        backtrack()
+        return ans
