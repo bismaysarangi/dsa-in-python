@@ -51,3 +51,28 @@ def removeDuplicates(self, arr, n):
         arr.sort()
         return arr 
 
+# Problem: Find Union
+def unionArray(self, nums1, nums2):
+    union = set(nums1) | set(nums2)
+    return list(union)
+
+# Problem: Find Missing Number
+def missingNumber(self, nums):
+     n = len(nums)
+     s = sum(nums)
+
+     return n * (n + 1) // 2 - s
+
+# Problem: Find Max Consecutive Ones
+def findMaxConsecutiveOnes(self, nums):
+     max_ones, count = 0, 0
+
+     for num in nums:
+        if num == 1:
+            count += 1
+            max_ones = max(max_ones, count)
+        else:
+            count = 0
+            
+     return max_ones
+               
