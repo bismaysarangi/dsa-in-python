@@ -75,4 +75,14 @@ def findMaxConsecutiveOnes(self, nums):
             count = 0
             
      return max_ones
+
+# Problem: Find the number that appers twice
+def singleNumber(self, nums):
+    result = 0
+
+    for num in nums:
+        result ^= num
+
+    return result
+
                
